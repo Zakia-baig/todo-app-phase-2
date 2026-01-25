@@ -505,7 +505,6 @@ export default function Dashboard() {
     transition: 'all 0.3s ease', // transition-all
     fontWeight: '600', // font-semibold
     background: 'transparent',
-    border: 'none',
     cursor: 'pointer',
     borderRadius: '0.75rem', // rounded-xl
     backdropFilter: 'blur(12px)', // backdrop-blur-sm
