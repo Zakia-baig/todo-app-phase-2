@@ -655,7 +655,6 @@ export default function Dashboard() {
                       e.target.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 4px rgba(139, 92, 246, 0.3)'; // focus:ring-4 focus:ring-violet-500/30 focus:shadow-xl
                       e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.9)'; // focus:bg-white/90
                       e.target.style.color = '#1f2937'; // group-focus-within:text-gray-900
-                      e.target.style.placeholder = 'gray'; // group-focus-within:placeholder:text-gray-400
                     }}
                     onBlur={(e) => {
                       e.target.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'; // shadow-lg
@@ -681,7 +680,6 @@ export default function Dashboard() {
                       e.target.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 4px rgba(139, 92, 246, 0.3)'; // focus:ring-4 focus:ring-violet-500/30 focus:shadow-xl
                       e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.9)'; // focus:bg-white/90
                       e.target.style.color = '#1f2937'; // group-focus-within:text-gray-900
-                      e.target.style.placeholder = 'gray'; // group-focus-within:placeholder:text-gray-400
                     }}
                     onBlur={(e) => {
                       e.target.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'; // shadow-lg
