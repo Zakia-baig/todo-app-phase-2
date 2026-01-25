@@ -26,7 +26,7 @@ export default function Dashboard() {
 
     setUserId(storedUserId);
     fetchTasks(storedUserId);
-  }, [router]);
+  }, [router]); // eslint-disable-next-line react-hooks/exhaustive-deps
 
   // Hide notification after 3 seconds
   useEffect(() => {
@@ -297,14 +297,13 @@ export default function Dashboard() {
   const textareaStyle = {
     width: '100%',
     padding: '1.5rem 1.5rem 1.5rem 4rem', // px-6 py-5 pl-16 pr-6
-    border: 'none',
     borderRadius: '1rem', // rounded-2xl
     background: 'rgba(255, 255, 255, 0.2)', // bg-white/20
     backdropFilter: 'blur(12px)', // backdrop-blur-md
     color: 'white',
     fontSize: '1rem', // text-base
     boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // shadow-lg
-    border: '1px solid rgba(255, 255, 255, 0.3)', // border border-white/30
+    border: '1px solid rgba(255, 255, 255, 0.3)', // Sirf ek baar border rakhein
     resize: 'vertical' as const,
     boxSizing: 'border-box' as const
   };
