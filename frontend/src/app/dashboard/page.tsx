@@ -355,7 +355,7 @@ export default function Dashboard() {
 
   const taskListStyle = {
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'column' as const,
     gap: '1.25rem' // space-y-5
   };
 
@@ -488,7 +488,7 @@ export default function Dashboard() {
 
   const footerContentStyle = {
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'column' as const,
     justifyContent: 'space-between',
     alignItems: 'center',
     gap: '1rem' // gap-4
@@ -575,7 +575,7 @@ export default function Dashboard() {
       });
 
       Object.assign(footerContentStyle, {
-        flexDirection: 'row' // sm:flex-row
+        flexDirection: 'row' as const // sm:flex-row
       });
     }
   }
