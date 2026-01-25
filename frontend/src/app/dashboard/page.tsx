@@ -283,7 +283,6 @@ export default function Dashboard() {
   const inputStyle = {
     width: '100%',
     padding: '1.5rem 1.5rem 1.5rem 4rem', // px-6 py-5 pl-16 pr-6
-    border: 'none',
     borderRadius: '1rem', // rounded-2xl
     background: 'rgba(255, 255, 255, 0.2)', // bg-white/20
     backdropFilter: 'blur(12px)', // backdrop-blur-md
