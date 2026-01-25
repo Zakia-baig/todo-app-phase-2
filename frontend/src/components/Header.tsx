@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { isAuthenticated, logout, getCurrentUser } from '@/lib/auth';
+import { isAuthenticated, logout, getCurrentUser } from '../lib/auth';
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -58,12 +58,12 @@ const Header = () => {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-xl font-bold text-gray-900">Todo<span className="text-indigo-600">App</span></span>
+                <span className="text-xl font-bold text-gray-900">Todo<span className="text-indigo-600">-Mind</span></span>
               </Link>
             </div>
             <nav className="ml-10 hidden md:flex space-x-8">
               <Link
-                href="/"
+                href="/dashboard"
                 className="text-gray-700 hover:text-indigo-600 inline-flex items-center text-sm font-medium transition duration-200 py-2"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
