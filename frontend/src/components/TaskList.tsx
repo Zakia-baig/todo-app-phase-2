@@ -36,8 +36,17 @@ const TaskList: React.FC<TaskListProps> = ({ filter = 'all', onTaskUpdate, onTas
     const fetchTasks = async () => {
       try {
         setLoading(true);
-        const response = await taskApi.getTasks(userId, filter);
-        setTasks(response.data);
+        const response = await taskApi.getTasks(userId);
+
+        // Apply filter locally
+        let filteredTasks = response.data;
+        if (filter === 'completed') {
+          filteredTasks = response.data.filter((task: Task) => task.completed);
+        } else if (filter === 'incomplete') {
+          filteredTasks = response.data.filter((task: Task) => !task.completed);
+        }
+
+        setTasks(filteredTasks);
       } catch (err) {
         setError('Failed to load tasks');
         console.error('Error fetching tasks:', err);

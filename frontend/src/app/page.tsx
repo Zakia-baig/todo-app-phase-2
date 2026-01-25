@@ -31,7 +31,7 @@ export default function HomePage() {
 
   const flexContainerStyle = {
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'column' as const,
     justifyContent: 'space-between',
     gap: '4rem', // gap-16
     alignItems: 'center'
@@ -39,7 +39,7 @@ export default function HomePage() {
 
   const leftContentStyle = {
     width: '100%', // On mobile
-    textAlign: 'center',
+    textAlign: 'center' as const,
     maxWidth: '36rem' // lg:max-w-md
   };
 
@@ -72,12 +72,12 @@ export default function HomePage() {
     color: 'rgba(255, 255, 255, 0.8)', // text-white/80
     marginBottom: '2.5rem', // mb-10
     maxWidth: '32rem', // max-w-lg
-    textAlign: 'center'
+    textAlign: 'center' as const
   };
 
   const buttonsContainerStyle = {
     display: 'flex',
-    flexDirection: 'column', // flex-col
+    flexDirection: 'column' as const, // flex-col
     gap: '1rem', // gap-4
     justifyContent: 'center' // justify-center
   };
@@ -138,12 +138,12 @@ export default function HomePage() {
   };
 
   const statItemStyle = {
-    textAlign: 'center'
+    textAlign: 'center' as const
   };
 
   const footerStyle = {
     marginTop: '4rem', // mt-16
-    textAlign: 'center',
+    textAlign: 'center' as const,
     color: 'rgba(255, 255, 255, 0.6)' // text-white/60
   };
 
@@ -152,12 +152,12 @@ export default function HomePage() {
     const mediaQuery = window.matchMedia('(min-width: 1024px)');
     if (mediaQuery.matches) {
       Object.assign(flexContainerStyle, {
-        flexDirection: 'row' // lg:flex-row
+        flexDirection: 'row' as const // lg:flex-row
       });
 
       Object.assign(leftContentStyle, {
         width: '50%', // lg:w-1/2
-        textAlign: 'left' // lg:text-left
+        textAlign: 'left' as const // lg:text-left
       });
 
       Object.assign(rightContentStyle, {
@@ -165,7 +165,7 @@ export default function HomePage() {
       });
 
       Object.assign(paragraphStyle, {
-        textAlign: 'left' // lg:text-left
+        textAlign: 'left' as const // lg:text-left
       });
 
       Object.assign(buttonsContainerStyle, {

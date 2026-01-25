@@ -86,7 +86,7 @@ export default function LoginPage() {
   };
 
   const headerStyle = {
-    textAlign: 'center',
+    textAlign: 'center' as const,
     marginBottom: '2.5rem' // mb-10
   };
 
@@ -123,7 +123,7 @@ export default function LoginPage() {
     borderRadius: '0.75rem', // rounded-xl
     color: '#fecaca', // text-red-200
     fontSize: '0.875rem', // text-sm
-    textAlign: 'center',
+    textAlign: 'center' as const,
     backdropFilter: 'blur(12px)' // backdrop-blur-sm
   };
 
@@ -143,7 +143,6 @@ export default function LoginPage() {
     width: '100%',
     padding: '1.25rem', // px-5 py-4 (horizontal padding 5, vertical 4)
     borderRadius: '1rem', // rounded-2xl
-    border: 'none',
     backgroundColor: 'rgba(255, 255, 255, 0.2)', // bg-white/20
     backdropFilter: 'blur(12px)', // backdrop-blur-md
     color: 'white',
@@ -178,7 +177,7 @@ export default function LoginPage() {
 
   const footerStyle = {
     marginTop: '2rem', // mt-8
-    textAlign: 'center',
+    textAlign: 'center' as const,
     fontSize: '0.875rem', // text-sm
     color: 'rgba(255, 255, 255, 0.7)' // text-white/70
   };
