@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { isAuthenticated, logout, getCurrentUser } from '@/lib/auth';
+import { isAuthenticated, logout, getCurrentUser } from '../lib/auth';
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
