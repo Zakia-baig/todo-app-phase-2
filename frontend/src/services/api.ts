@@ -169,5 +169,39 @@ export const authApi = {
         console.log('Logout error:', error.response?.data || error.message);
         throw error;
       });
+  },
+
+  signup: (email: string, password: string, username?: string) => {
+    return axios.post(`${API_BASE_URL}/api/auth/signup`, {
+      email,
+      password,
+      username
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    }).then(response => {
+      console.log('Signup successful:', response.data);
+      return response;
+    }).catch(error => {
+      console.error('Signup error details:', {
+        status: error.response?.status,
+        data: error.response?.data,
+        message: error.message
+      });
+      throw error;
+    });
+  },
+
+  getCurrentUser: () => {
+    return apiClient.get('/api/auth/me')
+      .then(response => {
+        console.log('Get user successful:', response.data);
+        return response;
+      })
+      .catch(error => {
+        console.log('Get user error:', error.response?.data || error.message);
+        throw error;
+      });
   }
 };
