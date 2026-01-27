@@ -413,7 +413,7 @@ export default function HomePage() {
 
         {/* Footer */}
         <div style={footerStyle}>
-          <p>&copy; 2026 Todo-Mind- Designed & Developed by Zakia Baig</p>
+          <p>&copy; 2026 Todo-Mind- Designed &amp; Developed by Zakia Baig</p>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { taskApi } from '@/services/api';
 
@@ -12,6 +12,23 @@ export default function Dashboard() {
   const [notification, setNotification] = useState<{type: string, message: string} | null>(null);
   const [userId, setUserId] = useState<string>('');
   const router = useRouter();
+
+  const showNotification = (type: string, message: string) => {
+    setNotification({ type, message });
+  };
+
+  const fetchTasks = useCallback(async (currentUserId: string) => {
+    try {
+      setLoading(true);
+      const response = await taskApi.getTasks(currentUserId);
+      setTasks(response.data || []);
+    } catch (err) {
+      console.error("Error fetching tasks:", err);
+      showNotification('error', 'Failed to load tasks');
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   // Check for user authentication and initialize
   useEffect(() => {
@@ -26,7 +43,7 @@ export default function Dashboard() {
 
     setUserId(storedUserId);
     fetchTasks(storedUserId);
-  }, [router]); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router, fetchTasks]);
 
   // Hide notification after 3 seconds
   useEffect(() => {
@@ -37,23 +54,6 @@ export default function Dashboard() {
       return () => clearTimeout(timer);
     }
   }, [notification]);
-
-  const fetchTasks = async (currentUserId: string) => {
-    try {
-      setLoading(true);
-      const response = await taskApi.getTasks(currentUserId);
-      setTasks(response.data || []);
-    } catch (err) {
-      console.error("Error fetching tasks:", err);
-      showNotification('error', 'Failed to load tasks');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const showNotification = (type: string, message: string) => {
-    setNotification({ type, message });
-  };
 
   const handleLogout = () => {
     localStorage.removeItem('access_token');
